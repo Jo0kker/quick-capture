@@ -17,6 +17,7 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use Jeffgreco13\FilamentBreezy\BreezyCore;
 
 class DashboardPanelProvider extends PanelProvider
 {
@@ -38,6 +39,16 @@ class DashboardPanelProvider extends PanelProvider
             ->pages([
                 Pages\Dashboard::class,
             ])
+            ->plugin(
+                BreezyCore::make()
+                ->myProfile(
+                    hasAvatars: false
+                )
+                ->enableSanctumTokens(
+                    permissions: ['create'] // optional, customize the permissions (default = ["create", "view", "update", "delete"])
+                )
+            )
+            ->authGuard('web')
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
                 Widgets\AccountWidget::class,
