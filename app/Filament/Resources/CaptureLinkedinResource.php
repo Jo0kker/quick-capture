@@ -28,14 +28,15 @@ class CaptureLinkedinResource extends Resource
                     ->required()
                     ->placeholder(__('Name')),
                 Forms\Components\TextInput::make('email')
-                    ->required()
                     ->placeholder(__('Email')),
                 Forms\Components\TextInput::make('phone')
-                    ->required()
                     ->placeholder(__('Phone')),
                 Forms\Components\TextInput::make('function')
-                    ->required()
                     ->placeholder(__('Function')),
+                Forms\Components\TextInput::make('entreprise')
+                    ->placeholder(__('Entreprise')),
+                Forms\Components\TextInput::make('lieu')
+                    ->placeholder(__('Lieu')),
             ]);
     }
 

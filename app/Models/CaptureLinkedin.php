@@ -13,6 +13,7 @@ class CaptureLinkedin extends Model
         'email',
         'phone',
         'function',
-        'linkedin_id',
+        'entreprise',
+        'lieu',
     ];
 }
