@@ -13,6 +13,10 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Mohamedsabil83\FilamentFormsTinyeditor\Components\TinyEditor;
+use pxlrbt\FilamentExcel\Actions\Tables\ExportAction;
+use pxlrbt\FilamentExcel\Actions\Tables\ExportBulkAction;
+use pxlrbt\FilamentExcel\Columns\Column;
+use pxlrbt\FilamentExcel\Exports\ExcelExport;
 
 class CaptureLinkedinResource extends Resource
 {
@@ -63,6 +67,18 @@ class CaptureLinkedinResource extends Resource
             ])
             ->filters([
                 //
+            ])->headerActions([
+                ExportAction::make()->exports([
+                    ExcelExport::make()->withColumns([
+                        Column::make('name'),
+                        Column::make('email'),
+                        Column::make('phone'),
+                        Column::make('function'),
+                        Column::make('entreprise'),
+                        Column::make('lieu'),
+                        Column::make('created_at'),
+                    ]),
+                ]),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
@@ -70,6 +86,17 @@ class CaptureLinkedinResource extends Resource
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
+//                    ExportBulkAction::make()->exports([
+//                        ExcelExport::make()->withColumns([
+//                            Column::make('name'),
+//                            Column::make('email'),
+//                            Column::make('phone'),
+//                            Column::make('function'),
+//                            Column::make('entreprise'),
+//                            Column::make('lieu'),
+//                            Column::make('created_at'),
+//                        ]),
+//                    ])
                 ]),
             ]);
     }

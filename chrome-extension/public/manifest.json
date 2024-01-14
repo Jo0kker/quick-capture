@@ -9,9 +9,7 @@
         "storage"
     ],
     "host_permissions": [
-        "*://*.quickcapture.fr/*",
-        "http://*/*",
-        "https://*/*"
+        "*://*.quickcapture.fr/*"
     ],
     "action": {
         "default_popup": "index.html",
