@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "474143299e63e8ad408455c0e913726c",
+    "content-hash": "d86be0e6cbd748195394084146e880f2",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -702,6 +702,86 @@
                 "source": "https://github.com/defuse/php-encryption/tree/v2.4.0"
             },
             "time": "2023-06-19T06:10:36+00:00"
+        },
+        {
+            "name": "desilva/filament-policies",
+            "version": "v0.2.3-alpha",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/caendesilva/filament-policies.git",
+                "reference": "695f2e89b4681b6302fdca602d9a934a20e71e8d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/caendesilva/filament-policies/zipball/695f2e89b4681b6302fdca602d9a934a20e71e8d",
+                "reference": "695f2e89b4681b6302fdca602d9a934a20e71e8d",
+                "shasum": ""
+            },
+            "require": {
+                "filament/filament": "^3.0",
+                "illuminate/contracts": "^10.0",
+                "php": "^8.1",
+                "spatie/laravel-package-tools": "^1.15.0"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.0",
+                "nunomaduro/collision": "^7.9",
+                "nunomaduro/larastan": "^2.0.1",
+                "orchestra/testbench": "^8.0",
+                "pestphp/pest": "^2.18",
+                "pestphp/pest-plugin-arch": "^2.0",
+                "pestphp/pest-plugin-laravel": "^2.0",
+                "phpstan/extension-installer": "^1.1",
+                "phpstan/phpstan-deprecation-rules": "^1.0",
+                "phpstan/phpstan-phpunit": "^1.0",
+                "spatie/laravel-ray": "^1.26"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Desilva\\FilamentPolicies\\FilamentPoliciesServiceProvider"
+                    ],
+                    "aliases": {
+                        "FilamentPolicies": "Desilva\\FilamentPolicies\\Facades\\FilamentPolicies"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Desilva\\FilamentPolicies\\": "src/",
+                    "Desilva\\FilamentPolicies\\Database\\Factories\\": "database/factories/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Caen De Silva",
+                    "email": "caen@desilva.se",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Super simple policy pages for FilamentPHP v3 pages, for all your terms of service and privacy policy needs!",
+            "homepage": "https://github.com/caendesilva/filament-policies",
+            "keywords": [
+                "filament policy pages",
+                "filament-policies",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/caendesilva/filament-policies/issues",
+                "source": "https://github.com/caendesilva/filament-policies"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/desilva",
+                    "type": "github"
+                }
+            ],
+            "time": "2023-12-26T16:50:25+00:00"
         },
         {
             "name": "dflydev/dot-access-data",
@@ -12167,7 +12247,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "desilva/filament-policies": 15
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
