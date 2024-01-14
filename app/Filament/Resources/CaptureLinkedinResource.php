@@ -3,15 +3,16 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\CaptureLinkedinResource\Pages;
-use App\Filament\Resources\CaptureLinkedinResource\RelationManagers;
 use App\Models\CaptureLinkedin;
-use Filament\Forms;
+use Filament\Forms\Components\RichEditor;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Mohamedsabil83\FilamentFormsTinyeditor\Components\TinyEditor;
 
 class CaptureLinkedinResource extends Resource
 {
@@ -23,20 +24,23 @@ class CaptureLinkedinResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')
+                TextInput::make('name')
                     ->autofocus()
                     ->required()
                     ->placeholder(__('Name')),
-                Forms\Components\TextInput::make('email')
+                TextInput::make('email')
                     ->placeholder(__('Email')),
-                Forms\Components\TextInput::make('phone')
+                TextInput::make('phone')
                     ->placeholder(__('Phone')),
-                Forms\Components\TextInput::make('function')
+                TextInput::make('function')
                     ->placeholder(__('Function')),
-                Forms\Components\TextInput::make('entreprise')
+                TextInput::make('entreprise')
                     ->placeholder(__('Entreprise')),
-                Forms\Components\TextInput::make('lieu')
+                TextInput::make('lieu')
                     ->placeholder(__('Lieu')),
+                TinyEditor::make('comment')
+                    ->columnSpanFull()->language('fr_FR')
+                    ->placeholder(__('Comment')),
             ]);
     }
 

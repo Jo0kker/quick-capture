@@ -15,5 +15,6 @@ class CaptureLinkedin extends Model
         'function',
         'entreprise',
         'lieu',
+        'comment',
     ];
 }

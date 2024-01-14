@@ -17,3 +17,7 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+/chrome-extension/build
+/chrome-extension/node_modules
+/chrome-extension/build.zip
+.DS_Store

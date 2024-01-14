@@ -17,6 +17,7 @@
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
         "livewire/livewire": "^3.3",
+        "mohamedsabil83/filament-forms-tinyeditor": "^2.2",
         "openai-php/laravel": "^0.8.1"
     },
     "require-dev": {
