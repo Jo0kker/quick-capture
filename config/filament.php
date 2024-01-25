@@ -70,5 +70,5 @@ return [
     */
 
     'livewire_loading_delay' => 'default',
-
+    'chrome_extension_url' => env('CHROME_EXTENSION_URL', ''),
 ];
